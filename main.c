@@ -1,12 +1,12 @@
 #include<stdio.h>
 #include<string.h>
 
-struct Author
+typedef struct
 {
 	char firstname[18];
 	char lastname[20];
 	int id;
-};
+} Author;
 
 typedef struct
 {
@@ -16,14 +16,14 @@ typedef struct
 
 typedef struct
 {
-	struct Author author;
+	Author author;
 	char isbn[14];
 	Publisher publisher;
 } Book;
 
-struct Author createAuthor(char first[], char last[])
+Author createAuthor(char first[], char last[])
 {
-	struct Author author;
+	Author author;
 	strcpy(author.firstname, first);
 	strcpy(author.lastname, last);
 
@@ -39,7 +39,7 @@ Publisher createPublisher(char name[], double factor)
 	return publisher;
 }
 
-Book createBook(struct Author author, char isbn[], Publisher publisher)
+Book createBook(Author author, char isbn[], Publisher publisher)
 {
 	Book book;
 	book.author = author;
@@ -51,10 +51,10 @@ Book createBook(struct Author author, char isbn[], Publisher publisher)
 
 int main(void)
 {
-	// struct Author uncleBob;// = {"Robert", "Martin"};
+	// Author uncleBob;// = {"Robert", "Martin"};
 	// strcpy(uncleBob.firstname, "Robert");
 	// strcpy(uncleBob.lastname, "Martin");
-	struct Author uncleBob = createAuthor("Robert", "Martin");
+	Author uncleBob = createAuthor("Robert", "Martin");
 
 	// Publisher oreilly;// = {name = "O'Reilly", priceFactor = 2.0};
 	// strcpy(oreilly.name, "O'Reilly");
