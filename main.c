@@ -126,5 +126,9 @@ int main(void)
 	printf("bookArray at index 2 with pointer-notation: %s\n", (*(bookArray + 2)).isbn);
 	printf("bookArray at index 2 with pointer-arrow-notation: %s\n", (bookArray + 2)->isbn);
 
+	Book testConvertBook = (Book) {isbn: "some-isbn", author: {firstname: "some"}};
+	printf("testBook-isbn: %s\n", testConvertBook.isbn);
+	printf("testBook-author firstname: %s\n", testConvertBook.author.firstname);
+
 	return 0;
 }
