@@ -1,13 +1,8 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
+#include "./author.h"
 
-typedef struct
-{
-	char firstname[18];
-	char lastname[20];
-	int id;
-} Author;
 
 typedef struct
 {
