@@ -1,7 +1,9 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
+
 #include "./author.h"
+#include "./reader.h"
 
 
 typedef struct
@@ -124,6 +126,8 @@ int main(void)
 	Book testConvertBook = (Book) {isbn: "some-isbn", author: {firstname: "some"}};
 	printf("testBook-isbn: %s\n", testConvertBook.isbn);
 	printf("testBook-author firstname: %s\n", testConvertBook.author.firstname);
+
+	readFile();
 
 	return 0;
 }
