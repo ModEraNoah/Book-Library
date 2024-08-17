@@ -146,6 +146,7 @@ int main(void)
 		if ((int) *(s+i) == 10)
 			printf("\n");
 	}
+	free(s);
 
 	return 0;
 }
