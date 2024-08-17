@@ -127,7 +127,25 @@ int main(void)
 	printf("testBook-isbn: %s\n", testConvertBook.isbn);
 	printf("testBook-author firstname: %s\n", testConvertBook.author.firstname);
 
-	readFile();
+	char * s = readFile();
+	printf("reading from readFile:\n\n\n>>>>>: ");
+	for (int i = 0; i < 32; i++) 
+	{
+		printf("%c  ", *(s+i) );
+		if (*(s+i) == '\0')
+		{
+			printf("end at i %d\n", i);
+			break;
+		}
+	}
+
+	for (int i = 0; i < 32; i++) 
+	{
+		printf("%x ", *(s+i) );
+		//newline
+		if ((int) *(s+i) == 10)
+			printf("\n");
+	}
 
 	return 0;
 }
